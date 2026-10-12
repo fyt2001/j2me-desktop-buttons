@@ -1,0 +1,8 @@
+/build/
+/lib/
+/data/
+/logs/
+/game.jar
+/*.jar
+/*.zip
+/*.class

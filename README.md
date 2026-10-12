@@ -1,2 +1,17 @@
-# j2me-desktop-buttons
-Desktop keypad window for user-supplied Java ME games
+# J2ME 桌面按钮窗口
+
+给自备 Java ME 游戏 JAR 增加一个可用鼠标操作的桌面按钮窗口。窗口提供左右软键及完整的 `1–9、*、0、#` 手机键盘；`2/4/6/8` 是方向键，`5` 是确定键。方向键可长按。游戏以 240×320 分辨率运行，Java ME 兼容层使用 MicroEmulator 2.0.4。
+
+本仓库**只含桌面窗口代码**，不含任何游戏 JAR、反编译代码、图片、音乐、数据或 Java 运行环境。使用者须自行取得有权使用的游戏及依赖文件。此项目不授予任何第三方游戏的版权或再发布许可。
+
+## Windows 运行
+
+需要 Java 17 JDK。在本地创建 `lib/` 文件夹，放入 `microemulator-2.0.4.jar`、`microemu-nokiaui-2.0.4.jar` 和 `microemu-jsr-120-2.0.4.jar`。这些依赖来自 [MicroEmulator 项目](https://github.com/barteo/microemu)，请按其许可获取和使用。
+
+把自己有权使用的 Java ME 游戏放在项目根目录并命名为 `game.jar`，然后双击 `运行.cmd`。也可以把游戏 JAR 拖到 `运行.cmd` 上运行。第一次启动会编译 `desktop/DesktopGame.java`；存档保存在 `data/`，日志保存在 `logs/`。
+
+此窗口只是操作层。部分游戏依赖特定厂商的 Java ME API，可能还需要对应兼容库；游戏自身的逻辑错误也不会被窗口修复。
+
+## 按键
+
+除窗口按钮外，可用方向键、回车、空格、Esc、F1、F2、数字键和数字小键盘。画面本身不响应点击。
